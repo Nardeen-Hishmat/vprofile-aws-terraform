@@ -1,0 +1,17 @@
+gnore Terraform binary and plugins
+.terraform/
+
+# Ignore State Files (Important!)
+*.tfstate
+*.tfstate.backup
+
+# Ignore Secrets (Very Important!)
+terraform.tfvars
+*.tfvars
+
+# Ignore SSH Keys
+*.pem
+vprofile-key
+
+# Ignore Logs
+*.log
