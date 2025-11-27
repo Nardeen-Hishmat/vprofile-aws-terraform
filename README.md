@@ -74,12 +74,11 @@ Follow these steps to deploy the application stack:
 
 ### 1. Infrastructure Provisioning
 Initialize the Terraform working directory and apply the configuration to create the AWS resources.
-
 ```bash
 terraform init
 terraform validate
 terraform apply --auto-approve
-
+---
 **Note:** The creation of the RDS instance may take approximately 10-15 minutes.
 
 ### 2. Application Configuration
