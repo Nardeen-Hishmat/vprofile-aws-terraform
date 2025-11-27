@@ -1,5 +1,5 @@
-gnore Terraform binary and plugins
-.terraform/
+#Ignore Terraform binary and plugins
+*.terraform/
 
 # Ignore State Files (Important!)
 *.tfstate
