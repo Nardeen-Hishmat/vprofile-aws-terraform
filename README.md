@@ -1,4 +1,5 @@
 # vProfile: Multi-Tier Web Application Deployment on AWS with Terraform
+![Document](https://github.com/user-attachments/assets/6fda56a3-549c-4d74-8da8-2d1b4ef7b347)
 
 ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
