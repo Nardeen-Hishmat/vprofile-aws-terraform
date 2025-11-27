@@ -116,12 +116,14 @@ Open a web browser and navigate to the public IP of the EC2 instance on port 808
 ```bash
 http://<EC2_PUBLIC_IP>:8080/login
 ```
-![WhatsApp Image 2025-11-27 at 05 53 31_d67c6bfa](https://github.com/user-attachments/assets/82109a04-3c68-43c5-8840-8d67ac287ee1)
+<img width="1916" height="939" alt="image" src="https://github.com/user-attachments/assets/2f04ffd1-42cf-4d79-9b68-d0b0aa4660fb" />
+
 ---
 # Clean Up
 * To prevent incurring unnecessary costs, destroy all provisioned resources once testing is complete.
 * Open a web browser and navigate to the public IP of the EC2 instance on port 8080 to access the application.
 ```bash
 terraform destroy --auto-approve
+```
 <img width="852" height="394" alt="image" src="https://github.com/user-attachments/assets/e88e9097-73a7-4f5a-8479-d08a29f64b4c" />
 ----
