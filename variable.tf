@@ -4,7 +4,7 @@ variable "aws_region" {
 
 variable "ami_id" {
   description = "AMI ID for Ubuntu 22.04 (us-east-1)"
-  # تأكدي إن ده الـ ID الصح عندك، ده بتاع Ubuntu 22.04
+  
   default     = "ami-0c7217cdde317cfec"
 }
 
