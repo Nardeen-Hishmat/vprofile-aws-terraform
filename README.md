@@ -42,3 +42,54 @@ graph TD
     style RDS fill:#ff9,stroke:#333,stroke-width:2px
     style Cache fill:#9f9,stroke:#333,stroke-width:2px
     style MQ fill:#99f,stroke:#333,stroke-width:2px
+```
+---
+## Prerequisites
+
+Ensure the following tools are installed and configured on your local machine before starting the deployment:
+
+* **AWS CLI:** Configured with valid `Access Key ID` and `Secret Access Key` for an IAM user with appropriate permissions.
+* **Terraform:** Version 1.0 or later.
+* **Java Development Kit (JDK):** Version 11.
+* **Apache Maven:** For building the Java artifact.
+* **Git:** For version control and cloning the repository.
+* **SSH Client:** OpenSSH or similar terminal client.
+
+## Project Structure
+
+This project uses modular Terraform configuration files to manage specific components of the infrastructure:
+
+* **`provider.tf`**: Configures the AWS provider and target region.
+* **`variables.tf`**: Defines input variables for resource customization (e.g., AMI IDs, instance types).
+* **`terraform.tfvars`**: Stores sensitive variable values (e.g., database passwords). *Note: This file is excluded from version control.*
+* **`backend.tf`**: Provisions backend services including Amazon RDS (MySQL), Amazon ElastiCache (Memcached), and Amazon MQ (RabbitMQ).
+* **`secgrp.tf`**: Defines Security Groups to control network traffic between the Load Balancer, Application, and Backend layers.
+* **`keypair.tf`**: Manages the SSH Key Pair for secure access to EC2 instances.
+* **`instance.tf`**: Provisions the EC2 application server and configures the User Data script.
+* **`userdata.sh`**: A shell script executed upon instance initialization to install dependencies (Tomcat 9, Java 11) and initialize the database schema.
+
+## Deployment Guide
+
+Follow these steps to deploy the application stack:
+
+### 1. Infrastructure Provisioning
+Initialize the Terraform working directory and apply the configuration to create the AWS resources.
+
+```bash
+terraform init
+terraform validate
+terraform apply --auto-approve
+
+**Note:** The creation of the RDS instance may take approximately 10-15 minutes.
+
+### 2. Application Configuration
+After the infrastructure is provisioned, retrieve the endpoints for RDS, ElastiCache, and Amazon MQ from the AWS Console. Update the `src/main/resources/application.properties` file with the new hostnames and credentials.
+
+### 3. Build Artifact
+Compile the source code and package the application into a WAR file using Maven.
+
+```bash
+mvn install
+ذذذ
+نتبذذذ
+ذذذ
